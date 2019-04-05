@@ -1,0 +1,172 @@
+# Tested on Deeptest release 1.12.0
+cbmcArguments:
+  java-generate-no-comments: true
+units:
+  # Target Coverage: Unknown %
+  - target:
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/helper/CSVHelper.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/helper/CSVHelper.java
+    # Child of CSVHelper.class
+    # Child Coverage: Unknown %
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/db/enums/CSVColEnum.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/db/enums/CSVColEnum.java
+    # Child of CSVHelper.class
+    # Child Coverage: Unknown %
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/object/manager/ObjectTypeManager.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/object/manager/ObjectTypeManager.java
+    # Child of CSVHelper.class
+    # Child Coverage: Unknown %
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/exception/ActsException.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/exception/ActsException.java
+    # Child of CSVHelper.class
+    # Child Coverage: Unknown %
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/util/FileUtil.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/util/FileUtil.java
+    # Child of CSVHelper.class
+    # Child Coverage: Unknown %
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/object/ActsObjectUtil.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/object/ActsObjectUtil.java
+    # Child of CSVHelper.class
+    # Child Coverage: Unknown %
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/log/ActsLogUtil.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/log/ActsLogUtil.java
+  # Target Coverage: Unknown %
+  - target:
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/util/CSVApisUtil.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/util/CSVApisUtil.java
+    # Child of CSVApisUtil.class
+    # Child Coverage: Unknown %
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/db/enums/CSVColEnum.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/db/enums/CSVColEnum.java
+    # Child of CSVApisUtil.class
+    # Child Coverage: Unknown %
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/object/manager/ObjectTypeManager.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/object/manager/ObjectTypeManager.java
+    # Child of CSVApisUtil.class
+    # Child Coverage: Unknown %
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/util/FileUtil.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/util/FileUtil.java
+    # Child of CSVApisUtil.class
+    # Child Coverage: Unknown %
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/log/ActsLogUtil.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/log/ActsLogUtil.java
+    # Child of CSVApisUtil.class
+    # Child Coverage: Unknown %
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/util/ContainerUtils.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/util/ContainerUtils.java
+  # Target Coverage: Unknown %
+  - target:
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/object/comparer/impl/MapComparer.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/object/comparer/impl/MapComparer.java
+    # Child of MapComparer.class
+    # Child Coverage: Unknown %
+    - dir: acts-common-util/target/classes
+      file: com/alipay/test/acts/object/comparer/UnitComparer.class
+      sourceDir: acts-common-util/src/main/java
+      sourceFile: com/alipay/test/acts/object/comparer/UnitComparer.java
+phases:
+-
+  timeout: 60
+  cbmcArguments:
+    max-nondet-array-length: 10
+    unwind: 1
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 10
+    unwind: 1
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 20
+    unwind: 2
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 20
+    unwind: 2
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 4
+    load-containing-class-only: true
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 50
+    max-nondet-string-length: 50
+    unwind: 4
+    load-containing-class-only: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 130
+    max-nondet-string-length: 110
+    unwind: 10
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 300
+    max-nondet-string-length: 100
+    unwind: 10
